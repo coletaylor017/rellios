@@ -1,38 +1,34 @@
 {
-  "devFiles": [],
+  "devFiles": [
+    "static/runtime/react-refresh.js",
+    "static/runtime/react-refresh.js.map",
+    "static/development/dll/dll_dc8ac110ce5d8530b237.js",
+    "static/development/dll/dll_dc8ac110ce5d8530b237.js.map"
+  ],
   "lowPriorityFiles": [
-    "static/OYn0OWY5qRr6pHaFIUaU9/_buildManifest.js",
-    "static/OYn0OWY5qRr6pHaFIUaU9/_ssgManifest.js"
+    "static/development/_buildManifest.js",
+    "static/development/_ssgManifest.js"
   ],
   "pages": {
     "/": [
-      "static/runtime/webpack-c212667a5f965e81e004.js",
-      "static/chunks/framework.e84fa698c7ee940652bd.js",
-      "static/chunks/commons.1f360419908d45f9b6d7.js",
-      "static/runtime/main-dcc422c230f81e279984.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_app": [
-      "static/runtime/webpack-c212667a5f965e81e004.js",
-      "static/chunks/framework.e84fa698c7ee940652bd.js",
-      "static/chunks/commons.1f360419908d45f9b6d7.js",
-      "static/chunks/073c4963f863d322c9c8cd1ef213de3cf5bc2fcf.5a4dddbcba4c6c5c89dd.js",
-      "static/css/a054ee690219d7d3dfe5.css",
-      "static/runtime/main-dcc422c230f81e279984.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_error": [
-      "static/runtime/webpack-c212667a5f965e81e004.js",
-      "static/chunks/framework.e84fa698c7ee940652bd.js",
-      "static/chunks/commons.1f360419908d45f9b6d7.js",
-      "static/runtime/main-dcc422c230f81e279984.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ],
     "/_polyfills": [
-      "static/runtime/polyfills-e4875719f3b6f90f1438.js"
+      "static/runtime/polyfills.js",
+      "static/runtime/polyfills.js.map"
     ],
     "/index": [
-      "static/runtime/webpack-c212667a5f965e81e004.js",
-      "static/chunks/framework.e84fa698c7ee940652bd.js",
-      "static/chunks/commons.1f360419908d45f9b6d7.js",
-      "static/runtime/main-dcc422c230f81e279984.js"
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }

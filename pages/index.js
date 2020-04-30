@@ -16,7 +16,7 @@ export default class Index extends Component {
     }
     render() {
         return <div>
-            <h1>The index page!</h1>
+            <h1>𝖗𝖊𝖑𝖑𝖎𝖔𝖘</h1>
             {this.props.pieces.map(piece => piece.title)}
         </div>
     }
