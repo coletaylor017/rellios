@@ -5,10 +5,8 @@ export default class Piece extends Component {
         super(props);
     }
     render() {
-        return <div>
-            <h3>{this.props.title}</h3>
-            <img src={this.props.imageSrc} />
-            <p>{this.props.description}</p>
+        return <div className="col-md-4 mb-5">
+            <img className="img-fluid" src={this.props.imageSrc} />
         </div>
     }
 }

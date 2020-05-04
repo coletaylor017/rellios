@@ -46,35 +46,23 @@ var Piece = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return __jsx("div", {
+        className: "col-md-4 mb-5",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 8,
           columnNumber: 16
         }
-      }, __jsx("h3", {
+      }, __jsx("img", {
+        className: "img-fluid",
+        src: this.props.imageSrc,
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 9,
           columnNumber: 13
         }
-      }, this.props.title), __jsx("img", {
-        src: this.props.imageSrc,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 10,
-          columnNumber: 13
-        }
-      }), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11,
-          columnNumber: 13
-        }
-      }, this.props.description));
+      }));
     }
   }]);
 
@@ -3078,7 +3066,7 @@ try {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
@@ -3124,36 +3112,37 @@ var Index = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this = this;
 
-      console.log(this.props.pieces[0].image);
       var pieces = this.props.pieces.map(function (piece) {
         return __jsx(_components_Piece__WEBPACK_IMPORTED_MODULE_7__["default"], {
           key: piece._id,
           title: piece.title,
-          imageSrc: _this.props.crud_api_uri + piece.image.formats.thumbnail.url,
+          imageSrc: "http://localhost:1337" + piece.image.url,
           description: piece.description,
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 23,
+            lineNumber: 22,
             columnNumber: 13
           }
         });
       });
       return __jsx("div", {
+        className: "container mt-5",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30,
+          columnNumber: 16
+        }
+      }, __jsx("div", {
+        className: "row text-center",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 31,
-          columnNumber: 16
-        }
-      }, __jsx("h1", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32,
           columnNumber: 13
         }
-      }, "\uD835\uDD97\uD835\uDD8A\uD835\uDD91\uD835\uDD91\uD835\uDD8E\uD835\uDD94\uD835\uDD98"), pieces);
+      }, pieces));
     }
   }], [{
     key: "getInitialProps",
@@ -3165,7 +3154,7 @@ var Index = /*#__PURE__*/function (_Component) {
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_8___default.a.get(process.env.CRUD_API_URI + "/pieces"));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_8___default.a.get("http://localhost:1337" + "/pieces"));
 
             case 3:
               response = _context.sent;
@@ -3180,7 +3169,7 @@ var Index = /*#__PURE__*/function (_Component) {
             case 9:
               return _context.abrupt("return", {
                 pieces: response.data,
-                crud_api_uri: process.env.CRUD_API_URI
+                crud_api_uri: "http://localhost:1337"
               });
 
             case 10:
@@ -3196,7 +3185,6 @@ var Index = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
 
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 

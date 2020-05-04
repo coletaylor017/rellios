@@ -13,24 +13,23 @@ export default class Index extends Component {
             console.log("error fetching /pieces");
         }
         return {
-            pieces: response.data,
-            crud_api_uri: process.env.CRUD_API_URI
+            pieces: response.data
         }
     }
     render() {
-        console.log(this.props.pieces[0].image);
         const pieces = this.props.pieces.map(piece =>
             <Piece
                 key={piece._id}
                 title={piece.title}
-                imageSrc={this.props.crud_api_uri + piece.image.formats.thumbnail.url}
+                imageSrc={piece.image.url}
                 description={piece.description}
             />
         );
 
-        return <div>
-            <h1>𝖗𝖊𝖑𝖑𝖎𝖔𝖘</h1>
-            {pieces}
+        return <div className="container mt-5">
+            <div className="row text-center">
+                {pieces}
+            </div>
         </div>
     }
 }
