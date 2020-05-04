@@ -3116,12 +3116,12 @@ var Index = /*#__PURE__*/function (_Component) {
         return __jsx(_components_Piece__WEBPACK_IMPORTED_MODULE_7__["default"], {
           key: piece._id,
           title: piece.title,
-          imageSrc: "http://localhost:1337" + piece.image.url,
+          imageSrc: piece.image.url,
           description: piece.description,
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 22,
+            lineNumber: 21,
             columnNumber: 13
           }
         });
@@ -3131,7 +3131,7 @@ var Index = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30,
+          lineNumber: 29,
           columnNumber: 16
         }
       }, __jsx("div", {
@@ -3139,7 +3139,7 @@ var Index = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31,
+          lineNumber: 30,
           columnNumber: 13
         }
       }, pieces));
@@ -3154,7 +3154,7 @@ var Index = /*#__PURE__*/function (_Component) {
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_8___default.a.get("http://localhost:1337" + "/pieces"));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_8___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces"));
 
             case 3:
               response = _context.sent;
@@ -3168,8 +3168,7 @@ var Index = /*#__PURE__*/function (_Component) {
 
             case 9:
               return _context.abrupt("return", {
-                pieces: response.data,
-                crud_api_uri: "http://localhost:1337"
+                pieces: response.data
               });
 
             case 10:

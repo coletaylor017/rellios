@@ -164,14 +164,13 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     try {
       // environment variables should be available on server side. Should be problematic when this page is navigated to using a link
-      response = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:1337" + "/pieces");
+      response = await axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces");
     } catch (error) {
       console.log("error fetching /pieces");
     }
 
     return {
-      pieces: response.data,
-      crud_api_uri: "http://localhost:1337"
+      pieces: response.data
     };
   }
 
@@ -179,12 +178,12 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     const pieces = this.props.pieces.map(piece => __jsx(_components_Piece__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: piece._id,
       title: piece.title,
-      imageSrc: "http://localhost:1337" + piece.image.url,
+      imageSrc: piece.image.url,
       description: piece.description,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 21,
         columnNumber: 13
       }
     }));
@@ -193,7 +192,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
+        lineNumber: 29,
         columnNumber: 16
       }
     }, __jsx("div", {
@@ -201,7 +200,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31,
+        lineNumber: 30,
         columnNumber: 13
       }
     }, pieces));
