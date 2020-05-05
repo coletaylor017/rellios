@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -166,12 +166,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   static async getInitialProps() {
-    let response; // try {
+    let response;
 
-    response = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("http://localhost:1337" + "/pieces"); // }
-    // catch (error) {
-    //     console.log("error fetching /pieces");
-    // }
+    try {
+      response = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("http://localhost:1337" + "/pieces");
+    } catch (error) {
+      console.log("error fetching /pieces");
+      console.log(error);
+    }
 
     if (false) {}
 
@@ -218,7 +220,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

@@ -68,7 +68,7 @@ var Index = /*#__PURE__*/function (_Component) {
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32,
+            lineNumber: 33,
             columnNumber: 13
           }
         });
@@ -78,7 +78,7 @@ var Index = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40,
+          lineNumber: 41,
           columnNumber: 16
         }
       }, __jsx(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -86,7 +86,7 @@ var Index = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41,
+          lineNumber: 42,
           columnNumber: 13
         }
       }, pieces));
@@ -99,14 +99,24 @@ var Index = /*#__PURE__*/function (_Component) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              _context.prev = 0;
+              _context.next = 3;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_10___default.a.get("http://localhost:1337" + "/pieces"));
 
-            case 2:
+            case 3:
               response = _context.sent;
+              _context.next = 10;
+              break;
 
+            case 6:
+              _context.prev = 6;
+              _context.t0 = _context["catch"](0);
+              console.log("error fetching /pieces");
+              console.log(_context.t0);
+
+            case 10:
               if (true) {
-                _context.next = 6;
+                _context.next = 13;
                 break;
               }
 
@@ -116,19 +126,19 @@ var Index = /*#__PURE__*/function (_Component) {
                 imageBaseUri: ""
               });
 
-            case 6:
+            case 13:
               console.log("dev!");
               return _context.abrupt("return", {
                 pieces: response.data,
                 imageBaseUri: "http://localhost:1337"
               });
 
-            case 8:
+            case 15:
             case "end":
               return _context.stop();
           }
         }
-      }, null, null, null, Promise);
+      }, null, null, [[0, 6]], Promise);
     }
   }]);
 
@@ -140,4 +150,4 @@ var Index = /*#__PURE__*/function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.18e1d485c70fdba30053.hot-update.js.map
+//# sourceMappingURL=index.js.25658ca649092a3a227c.hot-update.js.map

@@ -3493,14 +3493,24 @@ var Index = /*#__PURE__*/function (_Component) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              _context.prev = 0;
+              _context.next = 3;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_10___default.a.get("http://localhost:1337" + "/pieces"));
 
-            case 2:
+            case 3:
               response = _context.sent;
+              _context.next = 10;
+              break;
 
+            case 6:
+              _context.prev = 6;
+              _context.t0 = _context["catch"](0);
+              console.log("error fetching /pieces");
+              console.log(_context.t0);
+
+            case 10:
               if (true) {
-                _context.next = 6;
+                _context.next = 13;
                 break;
               }
 
@@ -3510,19 +3520,19 @@ var Index = /*#__PURE__*/function (_Component) {
                 imageBaseUri: ""
               });
 
-            case 6:
+            case 13:
               console.log("dev!");
               return _context.abrupt("return", {
                 pieces: response.data,
                 imageBaseUri: "http://localhost:1337"
               });
 
-            case 8:
+            case 15:
             case "end":
               return _context.stop();
           }
         }
-      }, null, null, null, Promise);
+      }, null, null, [[0, 6]], Promise);
     }
   }]);
 
@@ -3533,7 +3543,7 @@ var Index = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!***********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fcole%2Fdev-workspace%2Frellios-frontend%2Fpages%2Findex.js&hotRouterUpdates=true ***!
   \***********************************************************************************************************************************************************/
@@ -3556,5 +3566,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

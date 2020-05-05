@@ -26,7 +26,6 @@ export default class Index extends Component {
             pieces: response.data,
             imageBaseUri: "http://localhost:1337"
         }
-
     }
     render() {
         const pieces = this.props.pieces.map(piece =>
