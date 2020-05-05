@@ -166,17 +166,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   static async getInitialProps() {
-    let response;
+    let response; // try {
 
-    try {
-      // environment variables should be available on server side. Should be problematic when this page is navigated to using a link
-      response = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces");
-    } catch (error) {
-      console.log("error fetching /pieces");
-    }
+    response = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("http://localhost:1337" + "/pieces"); // }
+    // catch (error) {
+    //     console.log("error fetching /pieces");
+    // }
 
+    if (false) {}
+
+    console.log("dev!");
     return {
-      pieces: response.data
+      pieces: response.data,
+      imageBaseUri: "http://localhost:1337"
     };
   }
 
@@ -184,12 +186,12 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     const pieces = this.props.pieces.map(piece => __jsx(_components_Piece__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: piece._id,
       title: piece.title,
-      imageSrc: piece.image.url,
+      imageSrc: this.props.imageBaseUri + piece.image.url,
       description: piece.description,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 32,
         columnNumber: 13
       }
     }));
@@ -198,7 +200,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31,
+        lineNumber: 40,
         columnNumber: 16
       }
     }, __jsx(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -206,7 +208,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32,
+        lineNumber: 41,
         columnNumber: 13
       }
     }, pieces));

@@ -3457,12 +3457,12 @@ var Index = /*#__PURE__*/function (_Component) {
         return __jsx(_components_Piece__WEBPACK_IMPORTED_MODULE_7__["default"], {
           key: piece._id,
           title: piece.title,
-          imageSrc: piece.image.url,
+          imageSrc: _this.props.imageBaseUri + piece.image.url,
           description: piece.description,
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 23,
+            lineNumber: 32,
             columnNumber: 13
           }
         });
@@ -3472,7 +3472,7 @@ var Index = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31,
+          lineNumber: 40,
           columnNumber: 16
         }
       }, __jsx(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -3480,7 +3480,7 @@ var Index = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32,
+          lineNumber: 41,
           columnNumber: 13
         }
       }, pieces));
@@ -3493,31 +3493,36 @@ var Index = /*#__PURE__*/function (_Component) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.prev = 0;
-              _context.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_10___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces"));
+              _context.next = 2;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_10___default.a.get("http://localhost:1337" + "/pieces"));
 
-            case 3:
+            case 2:
               response = _context.sent;
-              _context.next = 9;
-              break;
 
-            case 6:
-              _context.prev = 6;
-              _context.t0 = _context["catch"](0);
-              console.log("error fetching /pieces");
+              if (true) {
+                _context.next = 6;
+                break;
+              }
 
-            case 9:
+              console.log("production!");
               return _context.abrupt("return", {
-                pieces: response.data
+                pieces: response.data,
+                imageBaseUri: ""
               });
 
-            case 10:
+            case 6:
+              console.log("dev!");
+              return _context.abrupt("return", {
+                pieces: response.data,
+                imageBaseUri: "http://localhost:1337"
+              });
+
+            case 8:
             case "end":
               return _context.stop();
           }
         }
-      }, null, null, [[0, 6]], Promise);
+      }, null, null, null, Promise);
     }
   }]);
 

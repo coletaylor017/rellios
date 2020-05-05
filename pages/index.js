@@ -7,23 +7,32 @@ import axios from 'axios';
 export default class Index extends Component {
     static async getInitialProps() {
         let response;
-        try {
-            // environment variables should be available on server side. Should be problematic when this page is navigated to using a link
-            response = await axios.get(process.env.CRUD_API_URI + "/pieces");
+        // try {
+        response = await axios.get(process.env.CRUD_API_URI + "/pieces");
+        // }
+        // catch (error) {
+        //     console.log("error fetching /pieces");
+        // }
+        if (process.env.NODE_ENV === "production") {
+            console.log("production!");
+            return {
+                pieces: response.data,
+                imageBaseUri: ""
+            }
         }
-        catch (error) {
-            console.log("error fetching /pieces");
-        }
+        console.log("dev!");
         return {
-            pieces: response.data
+            pieces: response.data,
+            imageBaseUri: "http://localhost:1337"
         }
+
     }
     render() {
         const pieces = this.props.pieces.map(piece =>
             <Piece
                 key={piece._id}
                 title={piece.title}
-                imageSrc={piece.image.url}
+                imageSrc={this.props.imageBaseUri + piece.image.url}
                 description={piece.description}
             />
         );
