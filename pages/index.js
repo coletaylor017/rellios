@@ -7,12 +7,13 @@ import axios from 'axios';
 export default class Index extends Component {
     static async getInitialProps() {
         let response;
-        // try {
-        response = await axios.get(process.env.CRUD_API_URI + "/pieces");
-        // }
-        // catch (error) {
-        //     console.log("error fetching /pieces");
-        // }
+        try {
+            response = await axios.get(process.env.CRUD_API_URI + "/pieces");
+        }
+        catch (error) {
+            console.log("error fetching /pieces");
+            console.log(error);
+        }
         if (process.env.NODE_ENV === "production") {
             console.log("production!");
             return {
