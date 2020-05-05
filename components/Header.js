@@ -39,8 +39,8 @@ function Header() {
                 transform: 'translateX(-50%)'
             }}>𝖗𝖊𝖑𝖑𝖎𝖔𝖘</h1>
             <Navbar.Collapse id="basic-navbar-nav">
-                <hr className="hr-text" />
-                <Nav defaultActiveKey="/" activekey={router.pathname} className="mx-auto text-center">
+                <hr className="hr-text d-sm-none" />
+                <Nav defaultActiveKey="/" activekey={router.pathname} className="mx-auto">
                     {navLinks.map(navItem => {
                         return <Nav.Item key={navItem.text}>
                             <Link href={navItem.link} passHref>

@@ -215,7 +215,7 @@ function Header() {
       columnNumber: 13
     }
   }, __jsx("hr", {
-    className: "hr-text",
+    className: "hr-text d-sm-none",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -225,7 +225,7 @@ function Header() {
   }), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_2___default.a, {
     defaultActiveKey: "/",
     activekey: router.pathname,
-    className: "mx-auto text-center",
+    className: "mx-auto",
     __self: this,
     __source: {
       fileName: _jsxFileName,
