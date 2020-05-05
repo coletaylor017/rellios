@@ -45,29 +45,28 @@ function Header() {
     link: "/contact"
   }];
   var router = Object(next_router__WEBPACK_IMPORTED_MODULE_3__["useRouter"])();
-  console.log(router.pathname);
   return __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 31,
       columnNumber: 12
     }
   }, __jsx("h1", {
-    className: "text-center font-weight-bold mt-5",
+    className: "text-center font-weight-bold mt-5 d-none d-sm-block",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 9
+    }
+  }, "\uD835\uDD97\uD835\uDD8A\uD835\uDD91\uD835\uDD91\uD835\uDD8E\uD835\uDD94\uD835\uDD98"), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    expand: "sm",
+    className: "navbar-light bg-transparent mt-3",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33,
-      columnNumber: 9
-    }
-  }, "\uD835\uDD97\uD835\uDD8A\uD835\uDD91\uD835\uDD91\uD835\uDD8E\uD835\uDD94\uD835\uDD98"), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    expand: "lg",
-    className: "navbar-light bg-transparent mt-5",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34,
       columnNumber: 9
     }
   }, __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"].Toggle, {
@@ -75,26 +74,47 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 13
+    }
+  }), __jsx("h1", {
+    className: "font-weight-bold d-inline-block d-sm-none",
+    style: {
+      position: 'absolute',
+      left: '50%',
+      top: 5,
+      transform: 'translateX(-50%)'
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
       lineNumber: 35,
       columnNumber: 13
     }
-  }), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"].Collapse, {
-    className: "text-center",
+  }, "\uD835\uDD97\uD835\uDD8A\uD835\uDD91\uD835\uDD91\uD835\uDD8E\uD835\uDD94\uD835\uDD98"), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"].Collapse, {
     id: "basic-navbar-nav",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 41,
       columnNumber: 13
     }
-  }, __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    defaultActiveKey: "/",
-    className: "justify-content-center",
-    activekey: router.pathname,
+  }, __jsx("hr", {
+    className: "hr-text",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 42,
+      columnNumber: 17
+    }
+  }), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    defaultActiveKey: "/",
+    activekey: router.pathname,
+    className: "mx-auto text-center",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
       columnNumber: 17
     }
   }, navLinks.map(function (navItem) {
@@ -103,7 +123,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39,
+        lineNumber: 45,
         columnNumber: 32
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -112,7 +132,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40,
+        lineNumber: 46,
         columnNumber: 29
       }
     }, __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_2__["default"].Link, {
@@ -120,14 +140,14 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 47,
         columnNumber: 33
       }
     }, __jsx("a", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 47,
         columnNumber: 67
       }
     }, navItem.text))));

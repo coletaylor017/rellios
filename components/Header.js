@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { useRouter } from 'next/router';
@@ -28,13 +28,19 @@ function Header() {
         }
     ]
     const router = useRouter();
-    console.log(router.pathname);
     return <div>
-        <h1 className="text-center font-weight-bold mt-5">𝖗𝖊𝖑𝖑𝖎𝖔𝖘</h1>
-        <Navbar expand="lg" className="navbar-light bg-transparent mt-5">
+        <h1 className="text-center font-weight-bold mt-5 d-none d-sm-block">𝖗𝖊𝖑𝖑𝖎𝖔𝖘</h1>
+        <Navbar expand="sm" className="navbar-light bg-transparent mt-3">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse className="text-center" id="basic-navbar-nav">
-                <Nav defaultActiveKey="/" className="justify-content-center" activekey={router.pathname}>
+            <h1 className="font-weight-bold d-inline-block d-sm-none" style={{
+                position: 'absolute',
+                left: '50%',
+                top: 5,
+                transform: 'translateX(-50%)'
+            }}>𝖗𝖊𝖑𝖑𝖎𝖔𝖘</h1>
+            <Navbar.Collapse id="basic-navbar-nav">
+                <hr className="hr-text" />
+                <Nav defaultActiveKey="/" activekey={router.pathname} className="mx-auto text-center">
                     {navLinks.map(navItem => {
                         return <Nav.Item key={navItem.text}>
                             <Link href={navItem.link} passHref>

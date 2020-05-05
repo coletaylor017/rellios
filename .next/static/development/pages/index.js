@@ -46,7 +46,7 @@ var Piece = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return __jsx("div", {
-        className: "col-md-4 mb-5",
+        className: "col-md-4 mb-4",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -3528,7 +3528,7 @@ var Index = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!***********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fcole%2Fdev-workspace%2Frellios-frontend%2Fpages%2Findex.js&hotRouterUpdates=true ***!
   \***********************************************************************************************************************************************************/
@@ -3551,5 +3551,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
