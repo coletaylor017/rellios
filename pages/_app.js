@@ -1,6 +1,7 @@
 // import App from 'next/app'
 import React from 'react';
-import Header from '../components/Header'
+import Header from '../components/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MyApp({ Component, pageProps }) {
     return <div>

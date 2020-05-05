@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Piece from '../components/Piece'
+import Piece from '../components/Piece';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 
 export default class Index extends Component {
@@ -26,10 +28,10 @@ export default class Index extends Component {
             />
         );
 
-        return <div className="container mt-5">
-            <div className="row text-center">
+        return <Container className="mt-5">
+            <Row className="text-center">
                 {pieces}
-            </div>
-        </div>
+            </Row>
+        </Container>
     }
 }
