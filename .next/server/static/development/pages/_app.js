@@ -225,7 +225,7 @@ function Header() {
   }), __jsx(react_bootstrap_Nav__WEBPACK_IMPORTED_MODULE_2___default.a, {
     defaultActiveKey: "/",
     activekey: router.pathname,
-    className: "mx-auto",
+    className: "mx-auto text-center",
     __self: this,
     __source: {
       fileName: _jsxFileName,
