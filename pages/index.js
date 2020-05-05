@@ -14,17 +14,8 @@ export default class Index extends Component {
             console.log("error fetching /pieces");
             console.log(error);
         }
-        if (process.env.NODE_ENV === "production") {
-            console.log("production!");
-            return {
-                pieces: response.data,
-                imageBaseUri: ""
-            }
-        }
-        console.log("dev!");
         return {
             pieces: response.data,
-            imageBaseUri: "http://localhost:1337"
         }
     }
     render() {
@@ -32,7 +23,7 @@ export default class Index extends Component {
             <Piece
                 key={piece._id}
                 title={piece.title}
-                imageSrc={this.props.imageBaseUri + piece.image.url}
+                imageSrc={process.env.IMAGE_BASE_URI + piece.image.url}
                 description={piece.description}
             />
         );

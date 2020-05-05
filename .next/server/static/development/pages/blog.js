@@ -88,142 +88,137 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/Piece.js":
-/*!*****************************!*\
-  !*** ./components/Piece.js ***!
-  \*****************************/
+/***/ "./components/Post.js":
+/*!****************************!*\
+  !*** ./components/Post.js ***!
+  \****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Piece; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Post; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/components/Piece.js";
+var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/components/Post.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  constructor(props) {
-    super(props);
-  }
-
+class Post extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
     return __jsx("div", {
-      className: "col-md-4 mb-4",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 5,
+        columnNumber: 16
+      }
+    }, __jsx("h3", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6,
+        columnNumber: 13
+      }
+    }, this.props.title), __jsx("h4", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 13
+      }
+    }, this.props.date), __jsx("p", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 8,
-        columnNumber: 16
-      }
-    }, __jsx("img", {
-      className: "img-fluid",
-      src: this.props.imageSrc,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9,
         columnNumber: 13
       }
-    }));
+    }, this.props.body));
   }
 
 }
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/blog.js":
+/*!***********************!*\
+  !*** ./pages/blog.js ***!
+  \***********************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Blog; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Piece__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Piece */ "./components/Piece.js");
-/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Container */ "react-bootstrap/Container");
-/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Row */ "react-bootstrap/Row");
-/* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/pages/index.js";
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Container */ "react-bootstrap/Container");
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Post */ "./components/Post.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/pages/blog.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
-
-class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+class Blog extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   static async getInitialProps() {
     let response;
 
     try {
-      response = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces");
+      response = await axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://relliosadmin.herokuapp.com" + "/posts");
     } catch (error) {
-      console.log("error fetching /pieces");
+      console.log("error fetching /posts");
       console.log(error);
     }
 
     return {
-      pieces: response.data
+      posts: response.data
     };
   }
 
   render() {
-    const pieces = this.props.pieces.map(piece => __jsx(_components_Piece__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      key: piece._id,
-      title: piece.title,
-      imageSrc: "" + piece.image.url,
-      description: piece.description,
+    const posts = this.props.posts.map(post => __jsx(_components_Post__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: post._id,
+      title: post.title,
+      date: post.date,
+      body: post.body,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 22,
         columnNumber: 13
       }
     }));
-    return __jsx(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      className: "mt-5",
+    return __jsx(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default.a, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31,
+        lineNumber: 29,
         columnNumber: 16
       }
-    }, __jsx(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      className: "text-center",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32,
-        columnNumber: 13
-      }
-    }, pieces));
+    }, posts);
   }
 
 }
 
 /***/ }),
 
-/***/ 5:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/***/ 4:
+/*!*****************************!*\
+  !*** multi ./pages/blog.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/cole/dev-workspace/rellios-frontend/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/cole/dev-workspace/rellios-frontend/pages/blog.js */"./pages/blog.js");
 
 
 /***/ }),
@@ -259,18 +254,7 @@ module.exports = require("react");
 
 module.exports = require("react-bootstrap/Container");
 
-/***/ }),
-
-/***/ "react-bootstrap/Row":
-/*!**************************************!*\
-  !*** external "react-bootstrap/Row" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-bootstrap/Row");
-
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=blog.js.map
