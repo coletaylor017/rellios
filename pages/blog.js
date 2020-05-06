@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
-import Post from '../components/Post';
+import PostPreview from '../components/PostPreview';
 import axios from 'axios';
 
 export default class Blog extends Component {
@@ -19,7 +19,7 @@ export default class Blog extends Component {
     }
     render() {
         const posts = this.props.posts.map(post =>
-            <Post
+            <PostPreview
                 key={post._id}
                 title={post.title}
                 date={post.date}
