@@ -88,64 +88,157 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./pages/about.js":
-/*!************************!*\
-  !*** ./pages/about.js ***!
-  \************************/
+/***/ "./components/Post.js":
+/*!****************************!*\
+  !*** ./components/Post.js ***!
+  \****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return About; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Post; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Container */ "react-bootstrap/Container");
-/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Image */ "react-bootstrap/Image");
-/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/pages/about.js";
+/* harmony import */ var react_showdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-showdown */ "react-showdown");
+/* harmony import */ var react_showdown__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_showdown__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/components/Post.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-
-class About extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+class Post extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
-    return __jsx(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    return __jsx("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 6,
+        columnNumber: 16
+      }
+    }, __jsx("h3", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 7,
-        columnNumber: 16
+        columnNumber: 13
       }
-    }, __jsx("p", {
+    }, this.props.title), __jsx("h4", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 8,
         columnNumber: 13
       }
-    }, "About"));
+    }, this.props.date), __jsx(react_showdown__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      markdown: this.props.body,
+      options: {
+        tables: true,
+        emoji: true
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 13
+      }
+    }));
   }
 
 }
 
 /***/ }),
 
-/***/ 3:
-/*!******************************!*\
-  !*** multi ./pages/about.js ***!
-  \******************************/
+/***/ "./pages/blog.js":
+/*!***********************!*\
+  !*** ./pages/blog.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Blog; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Container */ "react-bootstrap/Container");
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Post */ "./components/Post.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/pages/blog.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+class Blog extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  static async getInitialProps() {
+    let response;
+
+    try {
+      response = await axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://relliosadmin.herokuapp.com" + "/posts");
+    } catch (error) {
+      console.log("error fetching /posts");
+      console.log(error);
+    }
+
+    return {
+      posts: response.data
+    };
+  }
+
+  render() {
+    const posts = this.props.posts.map(post => __jsx(_components_Post__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: post._id,
+      title: post.title,
+      date: post.date,
+      body: post.body,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22,
+        columnNumber: 13
+      }
+    }));
+    return __jsx(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29,
+        columnNumber: 16
+      }
+    }, posts);
+  }
+
+}
+
+/***/ }),
+
+/***/ 5:
+/*!*****************************!*\
+  !*** multi ./pages/blog.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/cole/dev-workspace/rellios-frontend/pages/about.js */"./pages/about.js");
+module.exports = __webpack_require__(/*! /home/cole/dev-workspace/rellios-frontend/pages/blog.js */"./pages/blog.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
@@ -171,16 +264,16 @@ module.exports = require("react-bootstrap/Container");
 
 /***/ }),
 
-/***/ "react-bootstrap/Image":
-/*!****************************************!*\
-  !*** external "react-bootstrap/Image" ***!
-  \****************************************/
+/***/ "react-showdown":
+/*!*********************************!*\
+  !*** external "react-showdown" ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("react-bootstrap/Image");
+module.exports = require("react-showdown");
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=about.js.map
+//# sourceMappingURL=blog.js.map
