@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Container from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 
 export default class Contact extends Component {
     render() {
         return <Container>
-            <p>You can contact me. Just kidding.</p>
+            <p>Contact page coming soon!</p>
         </Container>
     }
 }

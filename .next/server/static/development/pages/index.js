@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -194,7 +194,6 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       }
     }));
     return __jsx(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      className: "mt-5",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -216,7 +215,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

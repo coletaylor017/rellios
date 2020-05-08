@@ -26,7 +26,7 @@ export default class Blog extends Component {
                 body={post.body}
             />
         );
-        return <Container>
+        return <Container className="mb-5">
             {posts}
         </Container>
     }

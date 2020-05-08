@@ -10,10 +10,10 @@ function Header() {
             text: "𝖕𝖔𝖗𝖙𝖋𝖔𝖑𝖎𝖔",
             link: "/"
         },
-        {
-            text: "𝖒𝖎𝖘𝖈",
-            link: "/misc"
-        },
+        // {
+        //     text: "𝖒𝖎𝖘𝖈",
+        //     link: "/misc"
+        // },
         {
             text: "𝖑𝖎𝖋𝖊",
             link: "/blog"
@@ -28,7 +28,7 @@ function Header() {
         }
     ]
     const router = useRouter();
-    return <div>
+    return <div className="mb-4">
         <h1 className="text-center font-weight-bold mt-5 d-none d-sm-block">𝖗𝖊𝖑𝖑𝖎𝖔𝖘</h1>
         <Navbar expand="sm" className="navbar-light bg-transparent mt-3">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

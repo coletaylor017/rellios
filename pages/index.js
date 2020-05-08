@@ -28,7 +28,7 @@ export default class Index extends Component {
             />
         );
 
-        return <Container className="mt-5">
+        return <Container>
             <Row className="text-center">
                 {pieces}
             </Row>
