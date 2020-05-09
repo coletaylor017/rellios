@@ -1,12 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Col from 'react-bootstrap/Col';
 
 export default class Piece extends Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
     }
+
+    handleClick() {
+        this.props.handleShow(this.props.id);
+    }
+
     render() {
-        return <div className="col-md-4 mb-4">
-            <img className="img-fluid" src={this.props.imageSrc} />
-        </div>
+        return <Col md={4} className="mb-4">
+            <a onClick={this.handleClick}>
+                <img className="img-fluid" src={this.props.imageSrc} />
+            </a>
+        </Col>
     }
 }

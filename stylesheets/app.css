@@ -3,3 +3,11 @@ body {
     font-family: 'EB Garamond', serif;
     font-size: 18px;
 }
+
+.modal-90w {
+    width: 100%;
+}
+
+.limit-height {
+    max-height: 50%;
+}

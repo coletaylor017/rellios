@@ -21,6 +21,7 @@ export default class Blog extends Component {
         const posts = this.props.posts.map(post =>
             <PostPreview
                 key={post._id}
+                id={post._id}
                 title={post.title}
                 date={post.date}
                 body={post.body}

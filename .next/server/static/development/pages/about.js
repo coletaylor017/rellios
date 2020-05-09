@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -109,12 +109,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Image */ "react-bootstrap/Image");
 /* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_showdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-showdown */ "react-showdown");
+/* harmony import */ var react_showdown__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_showdown__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/pages/about.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
 class About extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  static async getInitialProps() {
+    let response;
+
+    try {
+      response = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("https://relliosadmin.herokuapp.com" + "/about-page-content");
+    } catch (error) {
+      console.log("error fetching /pieces");
+      console.log(error);
+    }
+
+    return {
+      content: response.data.content
+    };
+  }
+
   render() {
     return __jsx(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default.a, {
       className: "text-center mb-5",
@@ -124,82 +145,25 @@ class About extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 7,
+        lineNumber: 22,
         columnNumber: 16
       }
-    }, __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      className: "mb-5",
-      src: "https://rellios-direct-uploads.s3.us-west-2.amazonaws.com/mw-profile.jpg",
+    }, __jsx(react_showdown__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      markdown: this.props.content,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 8,
+        lineNumber: 23,
         columnNumber: 13
       }
-    }), __jsx("p", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9,
-        columnNumber: 13
-      }
-    }, "I am Rellios. ", __jsx("br", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9,
-        columnNumber: 30
-      }
-    }), "I am young and  na\xEFve."), __jsx("p", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12,
-        columnNumber: 13
-      }
-    }, "My name is My Wagner. ", __jsx("br", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12,
-        columnNumber: 38
-      }
-    }), "I am an artist and a writer."), __jsx("p", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15,
-        columnNumber: 13
-      }
-    }, "I am graduating from Olympus High School in May 2020. ", __jsx("br", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15,
-        columnNumber: 70
-      }
-    }), "I will be attending the University of Utah."), __jsx("p", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18,
-        columnNumber: 13
-      }
-    }, "I hope to live in the moment and reminisce on the best parts of life."), __jsx("p", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20,
-        columnNumber: 13
-      }
-    }, "This is my portfolio"));
+    }));
   }
 
 }
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/about.js ***!
   \******************************/
@@ -208,6 +172,17 @@ class About extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 module.exports = __webpack_require__(/*! /home/cole/dev-workspace/rellios-frontend/pages/about.js */"./pages/about.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
@@ -241,6 +216,17 @@ module.exports = require("react-bootstrap/Container");
 /***/ (function(module, exports) {
 
 module.exports = require("react-bootstrap/Image");
+
+/***/ }),
+
+/***/ "react-showdown":
+/*!*********************************!*\
+  !*** external "react-showdown" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-showdown");
 
 /***/ })
 

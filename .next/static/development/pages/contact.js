@@ -571,7 +571,7 @@ var Contact = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 1:
 /*!********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcontact&absolutePagePath=%2Fhome%2Fcole%2Fdev-workspace%2Frellios-frontend%2Fpages%2Fcontact.js&hotRouterUpdates=true ***!
   \********************************************************************************************************************************************************************/
@@ -594,5 +594,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=contact.js.map
