@@ -12493,7 +12493,7 @@ var About = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!****************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=%2Fhome%2Fcole%2Fdev-workspace%2Frellios-frontend%2Fpages%2Fabout.js&hotRouterUpdates=true ***!
   \****************************************************************************************************************************************************************/
@@ -12527,5 +12527,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=about.js.map

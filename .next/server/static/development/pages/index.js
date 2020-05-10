@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -115,25 +115,25 @@ module.exports = require("next/dist/next-server/lib/utils.js");
 
 /***/ }),
 
-/***/ "./components/Piece.js":
-/*!*****************************!*\
-  !*** ./components/Piece.js ***!
-  \*****************************/
+/***/ "./components/PiecePreview.js":
+/*!************************************!*\
+  !*** ./components/PiecePreview.js ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Piece; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PiecePreview; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Col */ "react-bootstrap/Col");
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/components/Piece.js";
+var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/components/PiecePreview.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+class PiecePreview extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -1879,7 +1879,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Piece__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Piece */ "./components/Piece.js");
+/* harmony import */ var _components_PiecePreview__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PiecePreview */ "./components/PiecePreview.js");
 /* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Container */ "react-bootstrap/Container");
 /* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Row */ "react-bootstrap/Row");
@@ -1927,7 +1927,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
     this.state = {
-      show: false,
+      showModal: false,
       piece: null
     };
     this.handleClose = this.handleClose.bind(this);
@@ -1940,7 +1940,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
   handleClose() {
     this.setState({
-      show: false,
+      showModal: false,
       piece: null
     });
   }
@@ -1956,13 +1956,13 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       return piece._id == pieceId;
     });
     this.setState({
-      show: true,
+      showModal: true,
       piece: selectedPiece
     });
   }
 
   render() {
-    const pieces = this.props.pieces.map(piece => __jsx(_components_Piece__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    const pieces = this.props.pieces.map(piece => __jsx(_components_PiecePreview__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: piece._id,
       id: piece._id,
       imageSrc: "" + piece.image.url,
@@ -1991,7 +1991,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       }
     }, pieces), this.state.piece ? __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a, {
       size: "lg",
-      show: this.state.show,
+      show: this.state.showModal,
       onHide: this.handleClose,
       __self: this,
       __source: {
@@ -2045,7 +2045,12 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         columnNumber: 29
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-      href: "/contact",
+      href: {
+        pathname: "piece",
+        query: {
+          id: this.state.piece.id
+        }
+      },
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -2053,20 +2058,29 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         columnNumber: 33
       }
     }, __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      variant: "outline-primary",
+      variant: "outline-secondary",
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 87,
         columnNumber: 37
       }
-    }, "Buy a Print")))), __jsx(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    }, "More")), __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      href: "mailto:test@example.com?subject=" + this.state.piece.title,
+      variant: "outline-primary",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 89,
+        columnNumber: 33
+      }
+    }, "Buy a Print"))), __jsx(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7___default.a, {
       className: "text-center",
       md: 6,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91,
+        lineNumber: 92,
         columnNumber: 25
       }
     }, __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -2076,7 +2090,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92,
+        lineNumber: 93,
         columnNumber: 29
       }
     })))) : null);
@@ -2086,7 +2100,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 4:
+/***/ 7:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

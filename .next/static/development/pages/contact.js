@@ -547,6 +547,7 @@ var Contact = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return __jsx(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        className: "text-center",
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -560,7 +561,22 @@ var Contact = /*#__PURE__*/function (_Component) {
           lineNumber: 7,
           columnNumber: 13
         }
-      }, "Contact page coming soon!"));
+      }, "If you are interested in purchasing a print or one of my pieces, please ", __jsx("a", {
+        href: "mailto:test@example.com",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7,
+          columnNumber: 88
+        }
+      }, "email me.")), __jsx("p", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9,
+          columnNumber: 13
+        }
+      }, "If you have any other questions or concerns, please reach out and I will get back you in a timely manner."));
     }
   }]);
 
@@ -571,7 +587,7 @@ var Contact = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcontact&absolutePagePath=%2Fhome%2Fcole%2Fdev-workspace%2Frellios-frontend%2Fpages%2Fcontact.js&hotRouterUpdates=true ***!
   \********************************************************************************************************************************************************************/
@@ -594,5 +610,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=contact.js.map

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -114,6 +114,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 class Contact extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
     return __jsx(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      className: "text-center",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -127,14 +128,29 @@ class Contact extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 7,
         columnNumber: 13
       }
-    }, "Contact page coming soon!"));
+    }, "If you are interested in purchasing a print or one of my pieces, please ", __jsx("a", {
+      href: "mailto:test@example.com",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 88
+      }
+    }, "email me.")), __jsx("p", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 13
+      }
+    }, "If you have any other questions or concerns, please reach out and I will get back you in a timely manner."));
   }
 
 }
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/contact.js ***!
   \********************************/

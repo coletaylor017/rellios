@@ -1,15 +1,15 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
-/***/ "./components/Piece.js":
-/*!*****************************!*\
-  !*** ./components/Piece.js ***!
-  \*****************************/
+/***/ "./components/PiecePreview.js":
+/*!************************************!*\
+  !*** ./components/PiecePreview.js ***!
+  \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Piece; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PiecePreview; });
 /* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
@@ -25,7 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/components/Piece.js";
+var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/components/PiecePreview.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
@@ -35,22 +35,22 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
-var Piece = /*#__PURE__*/function (_Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(Piece, _Component);
+var PiecePreview = /*#__PURE__*/function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(PiecePreview, _Component);
 
-  var _super = _createSuper(Piece);
+  var _super = _createSuper(PiecePreview);
 
-  function Piece(props) {
+  function PiecePreview(props) {
     var _this;
 
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Piece);
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, PiecePreview);
 
     _this = _super.call(this, props);
     _this.handleClick = _this.handleClick.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
     return _this;
   }
 
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Piece, [{
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(PiecePreview, [{
     key: "handleClick",
     value: function handleClick() {
       this.props.handleShow(this.props.id);
@@ -88,7 +88,7 @@ var Piece = /*#__PURE__*/function (_Component) {
     }
   }]);
 
-  return Piece;
+  return PiecePreview;
 }(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
 
 
@@ -10361,7 +10361,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_Piece__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Piece */ "./components/Piece.js");
+/* harmony import */ var _components_PiecePreview__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/PiecePreview */ "./components/PiecePreview.js");
 /* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap/Container */ "./node_modules/react-bootstrap/esm/Container.js");
 /* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap/Row */ "./node_modules/react-bootstrap/esm/Row.js");
 /* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-bootstrap/Modal */ "./node_modules/react-bootstrap/esm/Modal.js");
@@ -10446,7 +10446,7 @@ var Index = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      show: false,
+      showModal: false,
       piece: null
     };
     _this.handleClose = _this.handleClose.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
@@ -10462,7 +10462,7 @@ var Index = /*#__PURE__*/function (_Component) {
     key: "handleClose",
     value: function handleClose() {
       this.setState({
-        show: false,
+        showModal: false,
         piece: null
       });
     }
@@ -10479,7 +10479,7 @@ var Index = /*#__PURE__*/function (_Component) {
         return piece._id == pieceId;
       });
       this.setState({
-        show: true,
+        showModal: true,
         piece: selectedPiece
       });
     }
@@ -10489,7 +10489,7 @@ var Index = /*#__PURE__*/function (_Component) {
       var _this2 = this;
 
       var pieces = this.props.pieces.map(function (piece) {
-        return __jsx(_components_Piece__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        return __jsx(_components_PiecePreview__WEBPACK_IMPORTED_MODULE_8__["default"], {
           key: piece._id,
           id: piece._id,
           imageSrc: "" + piece.image.url,
@@ -10519,7 +10519,7 @@ var Index = /*#__PURE__*/function (_Component) {
         }
       }, pieces), this.state.piece ? __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_11__["default"], {
         size: "lg",
-        show: this.state.show,
+        show: this.state.showModal,
         onHide: this.handleClose,
         __self: this,
         __source: {
@@ -10573,7 +10573,12 @@ var Index = /*#__PURE__*/function (_Component) {
           columnNumber: 29
         }
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_15___default.a, {
-        href: "/contact",
+        href: {
+          pathname: "piece",
+          query: {
+            id: this.state.piece.id
+          }
+        },
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -10581,20 +10586,29 @@ var Index = /*#__PURE__*/function (_Component) {
           columnNumber: 33
         }
       }, __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_12__["default"], {
-        variant: "outline-primary",
+        variant: "outline-secondary",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 87,
           columnNumber: 37
         }
-      }, "Buy a Print")))), __jsx(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      }, "More")), __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        href: "mailto:test@example.com?subject=" + this.state.piece.title,
+        variant: "outline-primary",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 89,
+          columnNumber: 33
+        }
+      }, "Buy a Print"))), __jsx(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_14__["default"], {
         className: "text-center",
         md: 6,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91,
+          lineNumber: 92,
           columnNumber: 25
         }
       }, __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -10604,7 +10618,7 @@ var Index = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92,
+          lineNumber: 93,
           columnNumber: 29
         }
       })))) : null);
@@ -10618,7 +10632,7 @@ var Index = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 6:
 /*!***********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fcole%2Fdev-workspace%2Frellios-frontend%2Fpages%2Findex.js&hotRouterUpdates=true ***!
   \***********************************************************************************************************************************************************/
@@ -10641,5 +10655,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[6,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

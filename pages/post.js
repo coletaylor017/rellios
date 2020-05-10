@@ -1,33 +1,31 @@
 import React, { Component } from 'react';
 import MarkdownView from 'react-showdown';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Container from 'react-bootstrap/Container';
+import axios from 'axios';
 
-function Post({ data }) {
-    const router = useRouter();
+export default class Post extends Component {
 
-    return <div>
+    static async getInitialProps(ctx) {
+        let response;
+        try {
+            response = await axios.get(process.env.CRUD_API_URI + "/posts/" + ctx.query.id);
+        }
+        catch (error) {
+            console.log("error fetching /pieces");
+            console.log(error);
+        }
+        return {
+            postData: response.data
+        }
+    }
 
-        <h4>{this.props.date}</h4>
-        <MarkdownView
-            markdown={this.props.body}
-        />
-    </div>
+    render() {
+        return <Container>
+            <h4>{this.props.postData.date}</h4>
+            <MarkdownView
+                markdown={this.props.postData.body}
+            />
+        </Container>
+    }
 }
-
-Post.getInitialProps = async ctx => {
-    let response;
-    try {
-        console.log("router query: " + router.query);
-        response = await axios.get(process.env.CRUD_API_URI + "/posts/" + router.query);
-    }
-    catch (error) {
-        console.log("error fetching /pieces");
-        console.log(error);
-    }
-    return {
-        pieces: response.data
-    }
-}
-
-export default Post;

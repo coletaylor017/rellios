@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Piece from '../components/Piece';
+import PiecePreview from '../components/PiecePreview';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Modal from 'react-bootstrap/Modal';
@@ -26,7 +26,7 @@ export default class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            show: false,
+            showModal: false,
             piece: null
         }
         this.handleClose = this.handleClose.bind(this);
@@ -38,7 +38,7 @@ export default class Index extends Component {
      */
     handleClose() {
         this.setState({
-            show: false,
+            showModal: false,
             piece: null
         });
     }
@@ -53,14 +53,14 @@ export default class Index extends Component {
             return piece._id == pieceId;
         });
         this.setState({
-            show: true,
+            showModal: true,
             piece: selectedPiece
         });
     }
 
     render() {
         const pieces = this.props.pieces.map(piece =>
-            <Piece
+            <PiecePreview
                 key={piece._id}
                 id={piece._id}
                 imageSrc={process.env.IMAGE_BASE_URI + piece.image.url}
@@ -74,7 +74,7 @@ export default class Index extends Component {
             </Row>
 
             {this.state.piece ?
-                <Modal size="lg" show={this.state.show} onHide={this.handleClose}>
+                <Modal size="lg" show={this.state.showModal} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>{this.state.piece.title}</Modal.Title>
                     </Modal.Header>
@@ -83,9 +83,10 @@ export default class Index extends Component {
                         <Col md={6}>
                             <Modal.Body>{this.state.piece.description}</Modal.Body>
                             <Modal.Footer>
-                                <Link href="/contact">
-                                    <Button variant="outline-primary">Buy a Print</Button>
+                                <Link href={{ pathname: "piece", query: { id: this.state.piece.id } }}>
+                                    <Button variant="outline-secondary">More</Button>
                                 </Link>
+                                <Button href={"mailto:test@example.com?subject=" + this.state.piece.title} variant="outline-primary">Buy a Print</Button>
                             </Modal.Footer>
                         </Col>
                         <Col className="text-center" md={6}>

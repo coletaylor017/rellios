@@ -146,8 +146,12 @@ class PostPreview extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         columnNumber: 16
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      href: "/post",
-      as: "/posts/" + this.props.id,
+      href: {
+        pathname: "post",
+        query: {
+          id: this.props.id
+        }
+      },
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -155,6 +159,7 @@ class PostPreview extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         columnNumber: 13
       }
     }, __jsx("a", {
+      className: "text-decoration-none text-reset",
       __self: this,
       __source: {
         fileName: _jsxFileName,
