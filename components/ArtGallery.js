@@ -72,7 +72,7 @@ export default class ArtGallery extends Component {
                                 <Link href={{ pathname: "piece", query: { id: this.state.piece.id } }}>
                                     <Button variant="outline-secondary">More</Button>
                                 </Link>
-                                <Button href={"mailto:rellios@outlook.com?subject=I'm interested in purchasing your piece, '" + this.props.pieceData.title + "'"} variant="outline-primary">Buy a Print</Button>
+                                <Button href={"mailto:rellios@outlook.com?subject=I'm interested in purchasing your piece, '" + this.state.piece.title + "'"} variant="outline-primary">Buy a Print</Button>
                             </Modal.Footer>
                         </Col>
                         <Col className="text-center" md={6}>
