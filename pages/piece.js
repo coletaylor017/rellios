@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import axios from 'axios';
 
+const moment = require('moment');
+
 export default class Piece extends Component {
 
     static async getInitialProps(ctx) {
@@ -24,7 +26,12 @@ export default class Piece extends Component {
     render() {
         return <Container className="text-center">
             <h2>{this.props.pieceData.title}</h2>
-            {this.props.pieceData.created ? <p><i>Created {this.props.pieceData.created}</i></p> : null}
+            {this.props.pieceData.created ?
+                <p>
+                    <i>Created on {moment(this.props.pieceData.created).format("MMMM D, YYYY")}</i>
+                </p>
+                : null
+            }
             <Image style={{ maxWidth: "80%", maxHeight: "40em" }} fluid src={process.env.IMAGE_BASE_URI + this.props.pieceData.image.url} />
             <p className="mt-4">{this.props.pieceData.description}</p>
         </Container>

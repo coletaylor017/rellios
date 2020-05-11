@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1835,6 +1835,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+const moment = __webpack_require__(/*! moment */ "moment");
+
 class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   static async getInitialProps(ctx) {
     let response;
@@ -1857,31 +1860,31 @@ class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25,
+        lineNumber: 27,
         columnNumber: 16
       }
     }, __jsx("h2", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 28,
         columnNumber: 13
       }
     }, this.props.pieceData.title), this.props.pieceData.created ? __jsx("p", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
-        columnNumber: 45
+        lineNumber: 30,
+        columnNumber: 17
       }
     }, __jsx("i", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
-        columnNumber: 48
+        lineNumber: 31,
+        columnNumber: 21
       }
-    }, "Created ", this.props.pieceData.created)) : null, __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    }, "Created on ", moment(this.props.pieceData.created).format("MMMM D, YYYY"))) : null, __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_4___default.a, {
       style: {
         maxWidth: "80%",
         maxHeight: "40em"
@@ -1891,7 +1894,7 @@ class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28,
+        lineNumber: 35,
         columnNumber: 13
       }
     }), __jsx("p", {
@@ -1899,7 +1902,7 @@ class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29,
+        lineNumber: 36,
         columnNumber: 13
       }
     }, this.props.pieceData.description));
@@ -1909,7 +1912,7 @@ class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/piece.js ***!
   \******************************/
@@ -1929,6 +1932,17 @@ module.exports = __webpack_require__(/*! /home/cole/dev-workspace/rellios-fronte
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "moment":
+/*!*************************!*\
+  !*** external "moment" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("moment");
 
 /***/ }),
 

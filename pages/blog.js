@@ -23,7 +23,7 @@ export default class Blog extends Component {
                 key={post._id}
                 id={post._id}
                 title={post.title}
-                date={post.date}
+                date={post.createdAt}
                 body={post.body}
             />
         );

@@ -211,11 +211,10 @@ function Header() {
   const navLinks = [{
     text: "𝖕𝖔𝖗𝖙𝖋𝖔𝖑𝖎𝖔",
     link: "/"
-  }, // {
-  //     text: "𝖒𝖎𝖘𝖈",
-  //     link: "/misc"
-  // },
-  {
+  }, {
+    text: "𝖒𝖎𝖘𝖈",
+    link: "/misc"
+  }, {
     text: "𝖑𝖎𝖋𝖊",
     link: "/blog"
   }, {

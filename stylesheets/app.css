@@ -11,3 +11,35 @@ body {
 .limit-height {
     max-height: 50%;
 }
+
+.blog-post img {
+    text-align: center;
+}
+
+.hide-images img {
+    display: none;
+}
+
+.hover-lighten {
+    animation: unlighten 0.4s forwards;
+    cursor: pointer;
+}
+
+.hover-lighten:hover {
+    animation: lighten 0.4s forwards;
+}
+
+@keyframes lighten {
+    100% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes unlighten {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -115,6 +115,206 @@ module.exports = require("next/dist/next-server/lib/utils.js");
 
 /***/ }),
 
+/***/ "./components/ArtGallery.js":
+/*!**********************************!*\
+  !*** ./components/ArtGallery.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ArtGallery; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _PiecePreview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PiecePreview */ "./components/PiecePreview.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/components/ArtGallery.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+class ArtGallery extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+      piece: null
+    };
+    this.handleClose = this.handleClose.bind(this);
+    this.handleShow = this.handleShow.bind(this);
+  }
+  /**
+   * Indicates that the modal should be hidden
+   */
+
+
+  handleClose() {
+    this.setState({
+      showModal: false,
+      piece: null
+    });
+  }
+  /**
+   * Indicates that the modal should be shown, featuring a piece with the given ID
+   * @param {*} pieceData 
+   */
+
+
+  handleShow(pieceId) {
+    // find the correct piece to display in the modal
+    const selectedPiece = this.props.pieces.find(function (piece) {
+      return piece._id == pieceId;
+    });
+    this.setState({
+      showModal: true,
+      piece: selectedPiece
+    });
+  }
+
+  render() {
+    const pieces = this.props.pieces.map(piece => __jsx(_PiecePreview__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: piece._id,
+      id: piece._id,
+      imageSrc: "" + piece.image.url,
+      handleShow: this.handleShow,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45,
+        columnNumber: 13
+      }
+    }));
+    return __jsx("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53,
+        columnNumber: 16
+      }
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+      className: "text-center",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54,
+        columnNumber: 13
+      }
+    }, pieces), this.state.piece ? __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
+      size: "lg",
+      show: this.state.showModal,
+      onHide: this.handleClose,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59,
+        columnNumber: 17
+      }
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Header, {
+      closeButton: true,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60,
+        columnNumber: 21
+      }
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Title, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61,
+        columnNumber: 25
+      }
+    }, this.state.piece.title)), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+      className: "m-4",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 64,
+        columnNumber: 21
+      }
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      md: 6,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65,
+        columnNumber: 25
+      }
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Body, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66,
+        columnNumber: 29
+      }
+    }, this.state.piece.description), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Footer, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 67,
+        columnNumber: 29
+      }
+    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      href: {
+        pathname: "piece",
+        query: {
+          id: this.state.piece.id
+        }
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68,
+        columnNumber: 33
+      }
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      variant: "outline-secondary",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69,
+        columnNumber: 37
+      }
+    }, "More")), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      href: "mailto:test@example.com?subject=I'm interested in purchasing your piece, " + this.state.piece.title,
+      variant: "outline-primary",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 71,
+        columnNumber: 33
+      }
+    }, "Buy a Print"))), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      className: "text-center",
+      md: 6,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 74,
+        columnNumber: 25
+      }
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Image"], {
+      className: "mx-auto",
+      fluid: true,
+      src: "" + this.state.piece.image.url,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 75,
+        columnNumber: 29
+      }
+    })))) : null);
+  }
+
+}
+
+/***/ }),
+
 /***/ "./components/PiecePreview.js":
 /*!************************************!*\
   !*** ./components/PiecePreview.js ***!
@@ -129,8 +329,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Col */ "react-bootstrap/Col");
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Image */ "react-bootstrap/Image");
+/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/components/PiecePreview.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 class PiecePreview extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
@@ -150,24 +353,25 @@ class PiecePreview extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15,
+        lineNumber: 16,
         columnNumber: 16
       }
     }, __jsx("a", {
+      className: "hover-lighten",
       onClick: this.handleClick,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16,
+        lineNumber: 17,
         columnNumber: 13
       }
-    }, __jsx("img", {
-      className: "img-fluid",
+    }, __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      fluid: true,
       src: this.props.imageSrc,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 18,
         columnNumber: 17
       }
     })));
@@ -1879,31 +2083,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Index; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_PiecePreview__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PiecePreview */ "./components/PiecePreview.js");
-/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Container */ "react-bootstrap/Container");
-/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Row */ "react-bootstrap/Row");
-/* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Modal */ "react-bootstrap/Modal");
-/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Button */ "react-bootstrap/Button");
-/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Image */ "react-bootstrap/Image");
-/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/Col */ "react-bootstrap/Col");
-/* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Container */ "react-bootstrap/Container");
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_ArtGallery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ArtGallery */ "./components/ArtGallery.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-
 
 
 
@@ -1913,7 +2099,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     let response;
 
     try {
-      response = await axios__WEBPACK_IMPORTED_MODULE_9___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces");
+      response = await axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces" + "?put_in_portfolio=true");
     } catch (error) {
       console.log("error fetching /pieces");
       console.log(error);
@@ -1924,183 +2110,30 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     };
   }
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      showModal: false,
-      piece: null
-    };
-    this.handleClose = this.handleClose.bind(this);
-    this.handleShow = this.handleShow.bind(this);
-  }
-  /**
-   * Indicates that the modal should be hidden
-   */
-
-
-  handleClose() {
-    this.setState({
-      showModal: false,
-      piece: null
-    });
-  }
-  /**
-   * Indicates that the modal should be shown, featuring a piece with the given ID
-   * @param {*} pieceData 
-   */
-
-
-  handleShow(pieceId) {
-    // find the correct piece to display in the modal
-    const selectedPiece = this.props.pieces.find(function (piece) {
-      return piece._id == pieceId;
-    });
-    this.setState({
-      showModal: true,
-      piece: selectedPiece
-    });
-  }
-
   render() {
-    const pieces = this.props.pieces.map(piece => __jsx(_components_PiecePreview__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      key: piece._id,
-      id: piece._id,
-      imageSrc: "" + piece.image.url,
-      handleShow: this.handleShow,
+    return __jsx(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default.a, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63,
+        lineNumber: 23,
+        columnNumber: 16
+      }
+    }, __jsx(_components_ArtGallery__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      pieces: this.props.pieces,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24,
         columnNumber: 13
       }
     }));
-    return __jsx(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 71,
-        columnNumber: 16
-      }
-    }, __jsx(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      className: "text-center",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72,
-        columnNumber: 13
-      }
-    }, pieces), this.state.piece ? __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      size: "lg",
-      show: this.state.showModal,
-      onHide: this.handleClose,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77,
-        columnNumber: 17
-      }
-    }, __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a.Header, {
-      closeButton: true,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78,
-        columnNumber: 21
-      }
-    }, __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a.Title, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 79,
-        columnNumber: 25
-      }
-    }, this.state.piece.title)), __jsx(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      className: "m-4",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82,
-        columnNumber: 21
-      }
-    }, __jsx(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7___default.a, {
-      md: 6,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83,
-        columnNumber: 25
-      }
-    }, __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a.Body, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 84,
-        columnNumber: 29
-      }
-    }, this.state.piece.description), __jsx(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a.Footer, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 85,
-        columnNumber: 29
-      }
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-      href: {
-        pathname: "piece",
-        query: {
-          id: this.state.piece.id
-        }
-      },
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 86,
-        columnNumber: 33
-      }
-    }, __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      variant: "outline-secondary",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 87,
-        columnNumber: 37
-      }
-    }, "More")), __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      href: "mailto:test@example.com?subject=" + this.state.piece.title,
-      variant: "outline-primary",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89,
-        columnNumber: 33
-      }
-    }, "Buy a Print"))), __jsx(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7___default.a, {
-      className: "text-center",
-      md: 6,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92,
-        columnNumber: 25
-      }
-    }, __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_6___default.a, {
-      className: "mx-auto",
-      fluid: true,
-      src: "" + this.state.piece.image.url,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93,
-        columnNumber: 29
-      }
-    })))) : null);
   }
 
 }
 
 /***/ }),
 
-/***/ 7:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2156,14 +2189,14 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-bootstrap/Button":
-/*!*****************************************!*\
-  !*** external "react-bootstrap/Button" ***!
-  \*****************************************/
+/***/ "react-bootstrap":
+/*!**********************************!*\
+  !*** external "react-bootstrap" ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("react-bootstrap/Button");
+module.exports = require("react-bootstrap");
 
 /***/ }),
 
@@ -2197,28 +2230,6 @@ module.exports = require("react-bootstrap/Container");
 /***/ (function(module, exports) {
 
 module.exports = require("react-bootstrap/Image");
-
-/***/ }),
-
-/***/ "react-bootstrap/Modal":
-/*!****************************************!*\
-  !*** external "react-bootstrap/Modal" ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-bootstrap/Modal");
-
-/***/ }),
-
-/***/ "react-bootstrap/Row":
-/*!**************************************!*\
-  !*** external "react-bootstrap/Row" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-bootstrap/Row");
 
 /***/ }),
 
