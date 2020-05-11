@@ -33,7 +33,7 @@ export default class Piece extends Component {
                 </p>
                 : null
             }
-            <Button href={"mailto:test@example.com?subject=I'm interested in purchasing your piece, " + this.props.pieceData.title} variant="outline-primary">Buy a Print</Button>
+            <Button href={"mailto:rellios@outlook.com?subject=I'm interested in purchasing your piece, '" + this.props.pieceData.title + "'"} variant="outline-primary">Buy a Print</Button>
             <br />
             <Image style={{ maxWidth: "80%", maxHeight: "40em" }} fluid src={process.env.IMAGE_BASE_URI + this.props.pieceData.image.url} />
             <p className="mt-4">{this.props.pieceData.description}</p>
