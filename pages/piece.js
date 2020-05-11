@@ -29,13 +29,13 @@ export default class Piece extends Component {
             <h2>{this.props.pieceData.title}</h2>
             {this.props.pieceData.created ?
                 <p>
-                    <i>Created on {moment(this.props.pieceData.created).format("MMMM D, YYYY")}</i>
+                    <i>Created {moment(this.props.pieceData.created).format("MMMM D, YYYY")}</i>
                 </p>
                 : null
             }
             <Button href={"mailto:rellios@outlook.com?subject=I'm interested in purchasing your piece, '" + this.props.pieceData.title + "'"} variant="outline-primary">Buy a Print</Button>
             <br />
-            <Image style={{ maxWidth: "80%", maxHeight: "40em" }} fluid src={process.env.IMAGE_BASE_URI + this.props.pieceData.image.url} />
+            <Image className="mt-3" style={{ maxWidth: "80%", maxHeight: "40em" }} fluid src={process.env.IMAGE_BASE_URI + this.props.pieceData.image.url} />
             <p className="mt-4">{this.props.pieceData.description}</p>
         </Container>
     }

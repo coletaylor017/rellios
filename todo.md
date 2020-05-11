@@ -6,3 +6,4 @@
 - Make 'misc' page- use same React component as index but different props  DONE!
 - More difficult: make contact form that sends email
 - Loading icons for content
+- Load high quality images only on their own pages
