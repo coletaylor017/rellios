@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1823,12 +1823,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Container */ "react-bootstrap/Container");
 /* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Image */ "react-bootstrap/Image");
-/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Button */ "react-bootstrap/Button");
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Image */ "react-bootstrap/Image");
+/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "/home/cole/dev-workspace/rellios-frontend/pages/piece.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1843,7 +1846,7 @@ class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     let response;
 
     try {
-      response = await axios__WEBPACK_IMPORTED_MODULE_5___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces/" + ctx.query.id);
+      response = await axios__WEBPACK_IMPORTED_MODULE_6___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces/" + ctx.query.id);
     } catch (error) {
       console.log("error fetching /pieces");
       console.log(error);
@@ -1860,31 +1863,47 @@ class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 28,
         columnNumber: 16
       }
     }, __jsx("h2", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28,
+        lineNumber: 29,
         columnNumber: 13
       }
     }, this.props.pieceData.title), this.props.pieceData.created ? __jsx("p", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
+        lineNumber: 31,
         columnNumber: 17
       }
     }, __jsx("i", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31,
+        lineNumber: 32,
         columnNumber: 21
       }
-    }, "Created on ", moment(this.props.pieceData.created).format("MMMM D, YYYY"))) : null, __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    }, "Created on ", moment(this.props.pieceData.created).format("MMMM D, YYYY"))) : null, __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      href: "mailto:test@example.com?subject=I'm interested in purchasing your piece, " + this.props.pieceData.title,
+      variant: "outline-primary",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36,
+        columnNumber: 13
+      }
+    }, "Buy a Print"), __jsx("br", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37,
+        columnNumber: 13
+      }
+    }), __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_5___default.a, {
       style: {
         maxWidth: "80%",
         maxHeight: "40em"
@@ -1894,7 +1913,7 @@ class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35,
+        lineNumber: 38,
         columnNumber: 13
       }
     }), __jsx("p", {
@@ -1902,7 +1921,7 @@ class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36,
+        lineNumber: 39,
         columnNumber: 13
       }
     }, this.props.pieceData.description));
@@ -1912,7 +1931,7 @@ class Piece extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/piece.js ***!
   \******************************/
@@ -1976,6 +1995,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-bootstrap/Button":
+/*!*****************************************!*\
+  !*** external "react-bootstrap/Button" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Button");
 
 /***/ }),
 

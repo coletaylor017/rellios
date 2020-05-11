@@ -6281,7 +6281,7 @@ exports.EVENTS = {
     They should probably be removed eventually.
 */
 __export(__webpack_require__(/*! ./FeedHandler */ "./node_modules/htmlparser2/lib/FeedHandler.js"));
-__export(__webpack_require__(/*! ./WritableStream */ 3));
+__export(__webpack_require__(/*! ./WritableStream */ 4));
 __export(__webpack_require__(/*! ./CollectingHandler */ "./node_modules/htmlparser2/lib/CollectingHandler.js"));
 var DomUtils = __importStar(__webpack_require__(/*! domutils */ "./node_modules/domutils/lib/index.js"));
 exports.DomUtils = DomUtils;
@@ -30186,6 +30186,76 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ }),
 
+/***/ "./node_modules/react-bootstrap/esm/Button.js":
+/*!****************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Button.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+/* harmony import */ var _SafeAnchor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SafeAnchor */ "./node_modules/react-bootstrap/esm/SafeAnchor.js");
+
+
+
+
+
+
+var defaultProps = {
+  variant: 'primary',
+  active: false,
+  disabled: false,
+  type: 'button'
+};
+var Button = react__WEBPACK_IMPORTED_MODULE_3___default.a.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      variant = _ref.variant,
+      size = _ref.size,
+      active = _ref.active,
+      className = _ref.className,
+      block = _ref.block,
+      type = _ref.type,
+      as = _ref.as,
+      props = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, ["bsPrefix", "variant", "size", "active", "className", "block", "type", "as"]);
+
+  var prefix = Object(_ThemeProvider__WEBPACK_IMPORTED_MODULE_4__["useBootstrapPrefix"])(bsPrefix, 'btn');
+  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, prefix, active && 'active', prefix + "-" + variant, block && prefix + "-block", size && prefix + "-" + size);
+
+  if (props.href) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_SafeAnchor__WEBPACK_IMPORTED_MODULE_5__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+      as: as,
+      ref: ref,
+      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes, props.disabled && 'disabled')
+    }));
+  }
+
+  if (ref) {
+    props.ref = ref;
+  }
+
+  if (!as) {
+    props.type = type;
+  }
+
+  var Component = as || 'button';
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+    className: classes
+  }));
+});
+Button.displayName = 'Button';
+Button.defaultProps = defaultProps;
+/* harmony default export */ __webpack_exports__["default"] = (Button);
+
+/***/ }),
+
 /***/ "./node_modules/react-bootstrap/esm/Container.js":
 /*!*******************************************************!*\
   !*** ./node_modules/react-bootstrap/esm/Container.js ***!
@@ -30283,6 +30353,93 @@ Image.defaultProps = defaultProps;
 
 /***/ }),
 
+/***/ "./node_modules/react-bootstrap/esm/SafeAnchor.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/SafeAnchor.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _createChainedFunction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createChainedFunction */ "./node_modules/react-bootstrap/esm/createChainedFunction.js");
+
+
+
+
+
+function isTrivialHref(href) {
+  return !href || href.trim() === '#';
+}
+/**
+ * There are situations due to browser quirks or Bootstrap CSS where
+ * an anchor tag is needed, when semantically a button tag is the
+ * better choice. SafeAnchor ensures that when an anchor is used like a
+ * button its accessible. It also emulates input `disabled` behavior for
+ * links, which is usually desirable for Buttons, NavItems, DropdownItems, etc.
+ */
+
+
+var SafeAnchor = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(function (_ref, ref) {
+  var _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'a' : _ref$as,
+      disabled = _ref.disabled,
+      onKeyDown = _ref.onKeyDown,
+      props = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, ["as", "disabled", "onKeyDown"]);
+
+  var handleClick = function handleClick(event) {
+    var href = props.href,
+        onClick = props.onClick;
+
+    if (disabled || isTrivialHref(href)) {
+      event.preventDefault();
+    }
+
+    if (disabled) {
+      event.stopPropagation();
+      return;
+    }
+
+    if (onClick) {
+      onClick(event);
+    }
+  };
+
+  var handleKeyDown = function handleKeyDown(event) {
+    if (event.key === ' ') {
+      event.preventDefault();
+      handleClick(event);
+    }
+  };
+
+  if (isTrivialHref(props.href)) {
+    props.role = props.role || 'button'; // we want to make sure there is a href attribute on the node
+    // otherwise, the cursor incorrectly styled (except with role='button')
+
+    props.href = props.href || '#';
+  }
+
+  if (disabled) {
+    props.tabIndex = -1;
+    props['aria-disabled'] = true;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    ref: ref
+  }, props, {
+    onClick: handleClick,
+    onKeyDown: Object(_createChainedFunction__WEBPACK_IMPORTED_MODULE_3__["default"])(handleKeyDown, onKeyDown)
+  }));
+});
+SafeAnchor.displayName = 'SafeAnchor';
+/* harmony default export */ __webpack_exports__["default"] = (SafeAnchor);
+
+/***/ }),
+
 /***/ "./node_modules/react-bootstrap/esm/ThemeProvider.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-bootstrap/esm/ThemeProvider.js ***!
@@ -30349,6 +30506,52 @@ function createBootstrapComponent(Component, opts) {
 
 
 /* harmony default export */ __webpack_exports__["default"] = (ThemeProvider);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/createChainedFunction.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/createChainedFunction.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * Safe chained function
+ *
+ * Will only create a new function if needed,
+ * otherwise will pass back existing functions or null.
+ *
+ * @param {function} functions to chain
+ * @returns {function|null}
+ */
+function createChainedFunction() {
+  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  return funcs.filter(function (f) {
+    return f != null;
+  }).reduce(function (acc, f) {
+    if (typeof f !== 'function') {
+      throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
+    }
+
+    if (acc === null) return f;
+    return function chainedFunction() {
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      acc.apply(this, args);
+      f.apply(this, args);
+    };
+  }, null);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (createChainedFunction);
 
 /***/ }),
 
@@ -36817,9 +37020,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap/Container */ "./node_modules/react-bootstrap/esm/Container.js");
-/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap/Image */ "./node_modules/react-bootstrap/esm/Image.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-bootstrap/Image */ "./node_modules/react-bootstrap/esm/Image.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -36832,6 +37036,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 
 
 
@@ -36861,31 +37066,47 @@ var Piece = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27,
+          lineNumber: 28,
           columnNumber: 16
         }
       }, __jsx("h2", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28,
+          lineNumber: 29,
           columnNumber: 13
         }
       }, this.props.pieceData.title), this.props.pieceData.created ? __jsx("p", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30,
+          lineNumber: 31,
           columnNumber: 17
         }
       }, __jsx("i", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31,
+          lineNumber: 32,
           columnNumber: 21
         }
-      }, "Created on ", moment(this.props.pieceData.created).format("MMMM D, YYYY"))) : null, __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      }, "Created on ", moment(this.props.pieceData.created).format("MMMM D, YYYY"))) : null, __jsx(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        href: "mailto:test@example.com?subject=I'm interested in purchasing your piece, " + this.props.pieceData.title,
+        variant: "outline-primary",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36,
+          columnNumber: 13
+        }
+      }, "Buy a Print"), __jsx("br", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37,
+          columnNumber: 13
+        }
+      }), __jsx(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_11__["default"], {
         style: {
           maxWidth: "80%",
           maxHeight: "40em"
@@ -36895,7 +37116,7 @@ var Piece = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35,
+          lineNumber: 38,
           columnNumber: 13
         }
       }), __jsx("p", {
@@ -36903,7 +37124,7 @@ var Piece = /*#__PURE__*/function (_Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36,
+          lineNumber: 39,
           columnNumber: 13
         }
       }, this.props.pieceData.description));
@@ -36918,7 +37139,7 @@ var Piece = /*#__PURE__*/function (_Component) {
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_11___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces/" + ctx.query.id));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_12___default.a.get("https://relliosadmin.herokuapp.com" + "/pieces/" + ctx.query.id));
 
             case 3:
               response = _context.sent;
@@ -36952,7 +37173,7 @@ var Piece = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /*!****************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fpiece&absolutePagePath=%2Fhome%2Fcole%2Fdev-workspace%2Frellios-frontend%2Fpages%2Fpiece.js&hotRouterUpdates=true ***!
   \****************************************************************************************************************************************************************/
@@ -36964,7 +37185,7 @@ module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fpiece&
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!**********************************!*\
   !*** ./WritableStream (ignored) ***!
   \**********************************/
@@ -36986,5 +37207,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=piece.js.map

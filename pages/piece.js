@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MarkdownView from 'react-showdown';
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import axios from 'axios';
 
@@ -32,6 +33,8 @@ export default class Piece extends Component {
                 </p>
                 : null
             }
+            <Button href={"mailto:test@example.com?subject=I'm interested in purchasing your piece, " + this.props.pieceData.title} variant="outline-primary">Buy a Print</Button>
+            <br />
             <Image style={{ maxWidth: "80%", maxHeight: "40em" }} fluid src={process.env.IMAGE_BASE_URI + this.props.pieceData.image.url} />
             <p className="mt-4">{this.props.pieceData.description}</p>
         </Container>

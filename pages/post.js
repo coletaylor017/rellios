@@ -31,15 +31,16 @@ export default class Post extends Component {
     render() {
         return <Container>
             <Row>
-                <Col md={9} >
+                <Col lg={this.props.piece ? 9 : 12} >
                     <h2>{this.props.title}</h2>
                     <p><i>{moment(this.props.date).format("MMMM D, YYYY")}</i></p>
-                    <MarkdownView classname="blog-post"
+                    <MarkdownView className="blog-post"
                         markdown={this.props.body}
+                        options={{ simpleLineBreaks: true }}
                     />
                 </Col>
                 {this.props.piece ?
-                    <Col className="text-center" md={3} >
+                    <Col className="text-center" lg={3} >
                         <div className="py-5 px-2" style={{ backgroundColor: "rgb(0,0,0,0.03)" }}>
                             <h5><i><u>Featured in this post:</u></i></h5>
                             <Link href={{ pathname: "piece", query: { id: this.props.piece._id } }}>

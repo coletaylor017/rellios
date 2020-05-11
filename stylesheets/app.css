@@ -4,6 +4,10 @@ body {
     font-size: 18px;
 }
 
+img {
+    max-width: 100%;
+}
+
 .modal-90w {
     width: 100%;
 }
@@ -13,7 +17,8 @@ body {
 }
 
 .blog-post img {
-    text-align: center;
+    display: block;
+    margin: 5px auto;
 }
 
 .hide-images img {

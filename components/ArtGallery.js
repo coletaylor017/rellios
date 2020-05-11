@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { Modal, Row, Col, Button, Image } from 'react-bootstrap';
+import Modal from 'react-bootstrap/Modal';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
+import Button from 'react-bootstrap/Button';
 import PiecePreview from './PiecePreview';
 import Link from "next/link";
 
